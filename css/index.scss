@@ -1,4 +1,5 @@
 @import url('./the-last-of-us-characters/index.scss');
+@import url('./mark-rise/index.scss');
 
 html {
   height: 100%;
@@ -15,7 +16,9 @@ body {
   margin: 0;
   min-height: 675px;
   height: 100%;
-  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 body *, body *::after, body *::before {
@@ -24,7 +27,7 @@ body *, body *::after, body *::before {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
