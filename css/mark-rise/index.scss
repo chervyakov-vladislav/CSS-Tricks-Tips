@@ -1,5 +1,6 @@
-$background-color: #fcf8db;
 $black: #00202a;
+$grey: #003444;
+$light-grey: #547d8f;
 $white: #f8f8f8;
 $blue: #2348cd;
 $skin: #f77676;
@@ -7,24 +8,27 @@ $dark-skin: #cc3c40;
 $light-skin: #f3af9f;
 $yellow: #f6d359;
 $dark-yellow: #e9a964;
+$red: #f44d5f;
+$dark-red: #cc3040;
+$light-red: #eab1ae;
 
-.person-section {
+.person1-section {
   position: relative;
 	height: 100vh;
 	margin: 0;
-	background-color: $background-color;
+	background-color: #fcf8db;
 }
 
-.person *, 
-.person *::after, 
-.person *::before,
-.person::after, 
-.person::before {
+.person1 *, 
+.person1 *::after, 
+.person1 *::before,
+.person1::after, 
+.person1::before {
   position: absolute;
   content: '';
 }
 
-.person {
+.person1 {
   top: 50%; left: 50%;
   width: 200px; height: 100px;
   background:
@@ -102,6 +106,161 @@ $dark-yellow: #e9a964;
       border: 2px solid $blue;
       border-radius: 50%;
       filter: drop-shadow(75px 0 $blue)
+    }
+  }
+}
+
+.person2-section {
+  position: relative;
+	height: 100vh;
+	margin: 0;
+	background-color: #fcd2c7;
+}
+
+.person2 *, 
+.person2 *::after, 
+.person2 *::before,
+.person2::after, 
+.person2::before {
+  position: absolute;
+  content: '';
+}
+
+.person2 {
+  top: 50%; left: 50%;
+	width: 88px; height: 276px;
+	background: linear-gradient(86deg, $light-skin 90%, transparent 91%);
+	translate: -42px -100px;
+
+  &::before {
+    top: 147px; left: -106px;
+	  width: 313px; height: 129px;
+    background: 
+      /* dark lines */
+      linear-gradient(-8deg, transparent 108px, $dark-red 109px, $dark-red 110px, transparent 111px) 198px 0 no-repeat,
+      linear-gradient(-39deg, transparent 60px, $dark-red 61px, $dark-red 62px, transparent 63px),
+      linear-gradient(-102deg, transparent 74px, $dark-red 75px, $dark-red 76px, transparent 77px),
+      linear-gradient(-80deg, transparent 106px, $dark-red 107px, $dark-red 108px, transparent 109px),
+      /* armpit */
+      conic-gradient(from 3rad, $red 22deg, transparent 0) 25px 49px / 50px 80px no-repeat, 
+      /* coat */
+      linear-gradient(-79deg, $red 126px, transparent 11px),
+      /* light lines */
+      linear-gradient(-8deg, transparent 97px, $light-red 98px, $light-red 99px, transparent 100px),
+      linear-gradient(108deg, transparent 149px, $light-red 150px, $light-red 151px, transparent 152px) 0 9px no-repeat,
+      /* shirt */ 
+      linear-gradient(-15deg, $white 155px, transparent 125px),
+      $light-skin;
+    -webkit-mask-image: conic-gradient(from 126deg at 50% -21%, black 109deg, transparent 0);
+  }
+
+  &__head {
+    top: -62px; left: 24px;
+    width: 74px; height: 74px;
+    background: $light-skin;
+    border-radius: 50%;
+
+    &::before {
+      top: 37px; left: -78px;
+      width: 20px; height: 21px;
+      background: $dark-skin;
+      border-radius: 13px 0 0 0;
+      transform-origin: top left;
+      transform: skewX(41deg);
+    }
+
+    &::after {
+      top: 24px; left: -64px;
+      width: 87px; height: 13px;
+      background:
+        /* light lines */
+        linear-gradient(0deg, $light-grey 2px, transparent 3px) 0 0 / 28px 7px no-repeat,
+        linear-gradient(0deg, $light-grey 2px, transparent 3px) 46px 0 / 41px 7px no-repeat,
+        /* brows */
+        linear-gradient(100deg, $grey 31px, transparent 3px) 5px 0 / 32px 100% no-repeat,
+        linear-gradient($grey 100%, transparent 3px) 50px 0 / 32px 100% no-repeat;
+    }
+  }
+
+  &__beard {
+    top: 64px; left: -76px;
+	  width: 131px; height: 153px;
+    background:
+      /* shadows */
+      conic-gradient(from 0.2rad at 13% 41%, #00202a 7%, transparent calc(7% + 0.2%)), 
+      conic-gradient(from -1rad at 93% 36%, #00202a 14%, transparent calc(14% + 0.2%)),
+      /* beard shape */
+      linear-gradient(284deg, $grey 77%, transparent 0) 0 0 / 100px 100% no-repeat, 
+      linear-gradient(83deg, $grey 62.7%, transparent 0) 40px 0 no-repeat;
+    border-radius: 0 0 15px 24px;
+    transform-origin: top left;
+    rotate: 7deg;
+
+    &::before {
+      top: 42px; left: 31px;
+      width: 55px; height: 27px;
+      background:
+          /* lips */
+          linear-gradient(-16deg, transparent 18px, $dark-skin 18px, $dark-skin 19px, transparent 20px) 8px 0 / 38px 100% no-repeat, 
+          /* shadows */
+          conic-gradient(from 190deg at 60% 41%, $skin 18%, transparent 0), 
+          linear-gradient(107deg, $skin 35%, transparent calc(35% + 1px)), 
+          /* skin */
+          linear-gradient(58deg, $light-skin 81%, transparent calc(81% + 1px));
+      transform-origin: top left;
+      rotate: -14deg;
+      border-radius: 0 0 5px 6px;
+      -webkit-mask-image: conic-gradient(from 83deg at 14% 15%, black 34%, transparent 0);
+    }
+
+    &::after {
+      top: 0px; left: 0px;
+      width: 100%; height: 162px;
+      background: 
+        linear-gradient(79deg, transparent 111px, $light-grey 111px, $light-grey 113px, transparent 113px) 0px 53px / 100% 71px no-repeat, 
+        linear-gradient(87deg, transparent 82px, $light-grey 82px, $light-grey 84px, transparent 84px) 0px 88px / 100% 74px no-repeat, 
+        linear-gradient(89deg, transparent 62px, $light-grey 62px, $light-grey 64px, transparent 64px) 0px 70px / 100% 24px no-repeat, 
+        linear-gradient(95deg, transparent 48px, $light-grey 48px, $light-grey 50px, transparent 50px) 0px 82px / 100% 54px no-repeat, 
+        linear-gradient(97deg, transparent 26px, $light-grey 26px, $light-grey 28px, transparent 28px) 0px 64px / 100% 96px no-repeat;
+    }
+  }
+
+  &__face {
+    top: 46px; left: -3px;
+    width: 50px; height: 45px;
+    background:
+        /* undereye circle */ 
+        linear-gradient(157deg, transparent 27px, $skin 28px, $skin 29px, transparent 30px) 0 0 / 37px 100% no-repeat,
+        /* background */
+        $light-skin;
+    border-radius: 0 0 8px;
+    transform-origin: top left;
+    rotate: 23deg;
+
+    &::before {
+      top: 2px; left: -58px;
+      width: 80px; height: 82px;
+      background:
+          /* undereye circle */
+          linear-gradient(194deg, transparent 55px, $dark-skin 56px, $dark-skin 57px, transparent 58px) 0px 0px / 18px 100% no-repeat,
+          /* shadows */
+          linear-gradient(5deg, $skin 24%, transparent calc(22% + 1px)) 0 0 / 40px 100% no-repeat,
+          linear-gradient(93deg, $skin 33%, transparent calc(33% + 1px)) 0px 9px no-repeat, 
+          /* skin */
+          linear-gradient(104deg, $light-skin 73px, transparent 74px);
+      transform-origin: top left;
+      border-radius: 0 0 0 9px;
+      rotate: -15deg;
+      transform: skewY(-23deg);
+    }
+
+    &::after {
+      top: 27px; left: -38px;
+      width: 8px; height: 8px;
+      background: $grey;
+      border-radius: 50%;
+      box-shadow: 46px 0 $grey;
+      rotate: -23deg;
     }
   }
 }
